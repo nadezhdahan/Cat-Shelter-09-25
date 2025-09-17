@@ -3,4 +3,7 @@ SoftUni JS Back End Project
 
 ## TODOs
 
-- [ ] Initialize NodeJs Project 
+- [ ] Initialize NodeJs Project
+
+ - [ ] Dev Script
+ - [ ] Debugging
