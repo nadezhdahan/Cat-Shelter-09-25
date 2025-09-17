@@ -4,8 +4,7 @@ SoftUni JS Back End Project
 ## TODOs
 
 - [x] Initialize NodeJs Project
-
- - [x] Dev Script
- - [x] Debugging
-
-- [ ] Add Basic HTTP Server
+- [x] Dev Script
+- [x] Debugging
+- [x] Add Basic HTTP Server
+- [] Add Resources
