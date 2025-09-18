@@ -14,3 +14,4 @@ SoftUni JS Back End Project
 - [x] Read home html from file system
 - [x] Read site css from file system
 - [x] Create Add Breed Page
+- [x] Create Add Cat Page

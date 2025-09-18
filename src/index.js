@@ -9,6 +9,9 @@ async function showAddBreed() {
     return await fs.readFile('./src/views/addBreed.html', { encoding: 'utf-8' });
 }
 
+async function showAddCat() {
+    return await fs.readFile('./src/views/addCat.html',{encoding:'utf-8'})
+}
 const server = http.createServer(async (req, res) => {
     if (req.url === '/') {
         const homeHtml = await homeView();
@@ -30,10 +33,19 @@ const server = http.createServer(async (req, res) => {
         const addBreedHtml = await showAddBreed();
 
         res.writeHead(200, {
-            'Content-Type': 'text/html', // ✅ поправено
+            'Content-Type': 'text/html', 
         });
 
         res.write(addBreedHtml);
+    }else if(req.url === '/cats/add-cat'){
+        const addCatHtml= await showAddCat()
+
+        res.writeHead(200,{
+            'content-type':'text/html'
+        })
+
+        res.write(addCatHtml)
+
     }
 
     res.end();
