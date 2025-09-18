@@ -1,30 +1,43 @@
 import http from 'http';
-import siteCss from './site.css.js';
-import fs from 'fs/promises'
+import fs from 'fs/promises';
 
+async function homeView() {
+    return await fs.readFile('./src/views/home/index.html', { encoding: 'utf-8' });
+}
 
-const server= http.createServer(async (req,res) =>{
+async function showAddBreed() {
+    return await fs.readFile('./src/views/addBreed.html', { encoding: 'utf-8' });
+}
 
-    if (req.url === '/'){
-const homeHtml= await fs.readFile('./src/views/home/index.html', {encoding : 'utf-8'})
-res.writeHead(200,{
-    'Content-Type': 'text/html',
-})
+const server = http.createServer(async (req, res) => {
+    if (req.url === '/') {
+        const homeHtml = await homeView();
 
-    res.write(homeHtml);
+        res.writeHead(200, {
+            'Content-Type': 'text/html',
+        });
 
-    }else if( req.url === '/styles/site.css'){
-        const homeCss= await fs.readFile('./src/style/style.css', {encoding : 'utf-8'})
-        res.writeHead(200,{
-            'content-type': 'text/css'
-        })
-        res.write(homeCss)
+        res.write(homeHtml);
+    } else if (req.url === '/styles/site.css') {
+        const homeCss = await fs.readFile('./src/style/style.css', { encoding: 'utf-8' });
+
+        res.writeHead(200, {
+            'Content-Type': 'text/css',
+        });
+
+        res.write(homeCss);
+    } else if (req.url === '/cats/add-breed') {
+        const addBreedHtml = await showAddBreed();
+
+        res.writeHead(200, {
+            'Content-Type': 'text/html', // ✅ поправено
+        });
+
+        res.write(addBreedHtml);
     }
 
-    res.end()
-})
-
+    res.end();
+});
 
 server.listen(5000);
-
-console.log('Server is listening on http://localhost:5000...')
+console.log('Server is listening on http://localhost:5000...');
