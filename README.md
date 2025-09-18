@@ -7,4 +7,7 @@ SoftUni JS Back End Project
 - [x] Dev Script
 - [x] Debugging
 - [x] Add Basic HTTP Server
-- [] Add Resources
+- [x] Add Resources
+- [x] Show Home View
+- [x] Add css
+- [x] Extract css into separate files
