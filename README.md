@@ -11,3 +11,5 @@ SoftUni JS Back End Project
 - [x] Show Home View
 - [x] Add css
 - [x] Extract css into separate files
+- [x] Read home html from file system
+- [x] Read site css from file system
