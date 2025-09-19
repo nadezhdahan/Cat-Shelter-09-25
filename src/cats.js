@@ -35,18 +35,5 @@ export default
       "imageUrl": "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?cs=srgb&dl=pexels-pixabay-104827.jpg&fm=jpg",
       "breed": "Fluffy Cat"
     },
-    {
-      "id": 6,
-      "name": "Test2",
-      "description": "test descriptnion",
-      "imageUrl": "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?cs=srgb&dl=pexels-pixabay-104827.jpg&fm=jpg",
-      "breed": "Fluffy Cat"
-    },
-    {
-      "id": 7,
-      "name": "Test3",
-      "description": "dasdasd",
-      "imageUrl": "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?cs=srgb&dl=pexels-pixabay-104827.jpg&fm=jpg",
-      "breed": "Fluffy Cat"
-    }
+    
   ]

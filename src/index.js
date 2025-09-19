@@ -21,7 +21,24 @@ async function showAddBreed() {
 async function showAddCat() {
     return await fs.readFile('./src/views/addCat.html',{encoding:'utf-8'})
 }
+
+
 const server = http.createServer(async (req, res) => {
+
+    if (req.method === 'POST'){
+        console.log('POST has been made')
+        let data=''
+        
+        req.on('data', (chunk) =>{
+            data += chunk.toString()
+        })
+        req.on('end', ()=>{
+            const newCat= new URLSearchParams(data)
+
+           const result=(Object.fromEntries(newCat.entries()))
+            cats.push(result)
+        })
+    }
     if (req.url === '/') {
         const homeHtml = await homeView();
 
@@ -30,6 +47,8 @@ const server = http.createServer(async (req, res) => {
         });
 
         res.write(homeHtml);
+
+
     } else if (req.url === '/styles/site.css') {
         const homeCss = await fs.readFile('./src/style/style.css', { encoding: 'utf-8' });
 
