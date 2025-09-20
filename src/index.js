@@ -37,7 +37,13 @@ const server = http.createServer(async (req, res) => {
 
            const result=(Object.fromEntries(newCat.entries()))
             cats.push(result)
+
+            res.writeHead(301,{
+                'location':'/'
+            })
+            res.end()
         })
+        return
     }
     if (req.url === '/') {
         const homeHtml = await homeView();

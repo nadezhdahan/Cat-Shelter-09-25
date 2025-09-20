@@ -17,3 +17,4 @@ SoftUni JS Back End Project
 - [x] Create Add Cat Page
 -[x] Render dynamic cats on home page
 -[x] Add cats from add-cats page
+-[x] Redirect to home page
